@@ -1,1 +1,1 @@
-# aurora-server-core
+#coming soon!

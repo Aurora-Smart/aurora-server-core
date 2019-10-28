@@ -1,0 +1,54 @@
+{
+  "name": "aurora-server-core",
+  "version": "0.0.3",
+  "description": "Kernklassen für Aurora-Server-Komponenten",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc --skipLibCheck",
+    "test": "mocha --exit",
+    "test-ci": "nyc -a --reporter=clover mocha --recursive --reporter mocha-bamboo-reporter",
+    "prepare": "npm run build"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://team.aurora-home.de:7990/scm/aur/aurora-server-core.git"
+  },
+  "author": "Jan Heinsohn",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "class-validator": "^0.10.1",
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.1",
+    "mocha-bamboo-reporter": "^1.1.2",
+    "mocha-typescript": "^1.1.17",
+    "mockhttp": "0.0.1",
+    "nyc": "^14.1.1",
+    "source-map-support": "^0.5.13",
+    "typescript": "^3.6.3"
+  },
+  "files": [
+    "dist/src/**/*"
+  ]
+}
